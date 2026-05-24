@@ -4,3 +4,8 @@ publish
 .DS_Store
 TODO.md
 TODO.org
+
+# Visual Studio
+.vs/
+bin/
+obj/

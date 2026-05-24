@@ -1,5 +1,12 @@
-bin
-obj
-.DS_Store
 # Emacs auto-save files
 *#
+.vs/
+**/.vs/
+
+bin/
+obj/
+
+.vscode/
+.idea/
+
+.DS_Store
