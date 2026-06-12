@@ -1,0 +1,35 @@
+﻿<Window x:Class="IslamicDesktop.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Islamic Dashboard"
+        WindowState="Maximized">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT MENU -->
+        <StackPanel Background="#1E1E1E">
+
+            <TextBlock Text="Islamic Tools"
+                       Foreground="White"
+                       FontSize="18"
+                       Margin="10"/>
+
+            <Button Content="Prayer Times" Click="Prayer_Click"/>
+            <Button Content="Next Prayer" Click="NextPrayer_Click"/>
+            <Button Content="Dhikr" Click="Dhikr_Click"/>
+            <Button Content="Quran" Click="Quran_Click"/>
+            <Button Content="Hijri Calendar" Click="Hijri_Click"/>
+            <Button Content="Fasting Days" Click="Fasting_Click"/>
+            <Button Content="99 Names" Click="Names_Click"/>
+
+        </StackPanel>
+
+        <!-- MAIN CONTENT -->
+        <ContentControl x:Name="MainContent"
+                        Grid.Column="1"/>
+    </Grid>
+</Window>

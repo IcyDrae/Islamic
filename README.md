@@ -1,8 +1,8 @@
-# IslamicCli
+# Islamic
 
-IslamicCli is a simple, cross-platform command-line application written in C# that provides daily Islamic utilities directly in the terminal. It focuses on prayer times, dhikr, Qur'an reading, and Hijri dates, all fetched automatically based on your location without manual configuration.
+Islamic is a simple, cross-platform command-line application and desktop application (for Windows 10 and 11) written in C# that provides daily Islamic utilities directly in the terminal and also as a desktop application. It focuses on prayer times, dhikr, Qur'an reading, and Hijri dates, all fetched automatically based on your location without manual configuration.
 
-## Features
+## Features of IslamicCli
 
 - Automatic prayer times based on your location (via Latitude and Longitude)
 - Display today’s full prayer schedule
@@ -86,7 +86,7 @@ Hijri: HijriCalendar class from .NET library
 
 ### Philosophy
 
-IslamicCli aims to be minimal, respectful, and distraction-free.
+Islamic aims to be minimal, respectful, and distraction-free.
 No tracking, no ads, no unnecessary complexity.
 
 Built for Muslims who live in the terminal.
