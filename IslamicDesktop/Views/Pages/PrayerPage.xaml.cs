@@ -8,7 +8,14 @@ public partial class PrayerPage : UserControl
     public PrayerPage(bool showNextOnly = false)
     {
         InitializeComponent();
-        Load();
+
+        if (showNextOnly)
+        {
+            LoadNext();
+        } else
+        {
+            Load();
+        }
     }
 
     private async void Load()
@@ -20,6 +27,19 @@ public partial class PrayerPage : UserControl
 
         var times = result.Item1;
 
+        FajrText.Text = $"Fajr: {times["Fajr"]}";
+        DhuhrText.Text = $"Dhuhr: {times["Dhuhr"]}";
+        AsrText.Text = $"Asr: {times["Asr"]}";
+        MaghribText.Text = $"Maghrib: {times["Maghrib"]}";
+        IshaText.Text = $"Isha: {times["Isha"]}";
+    }
+
+    private async void LoadNext()
+    {
+        var pray = new Pray(new PrayerTimeService());
+        var result = await pray.Tomorrow();
+        CityText.Text = $"City: {result.City}, {result.Country}";
+        var times = result.Item1;
         FajrText.Text = $"Fajr: {times["Fajr"]}";
         DhuhrText.Text = $"Dhuhr: {times["Dhuhr"]}";
         AsrText.Text = $"Asr: {times["Asr"]}";

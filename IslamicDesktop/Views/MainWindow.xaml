@@ -4,6 +4,42 @@
         Title="Islamic Dashboard"
         WindowState="Maximized">
 
+    <Window.Resources>
+
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#E8E6E1"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="6">
+
+                            <ContentPresenter Margin="10,5"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B5E5B"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#C9A24A"/>
+                                <Setter Property="Foreground" Value="#0F3D3E"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
@@ -11,25 +47,29 @@
         </Grid.ColumnDefinitions>
 
         <!-- LEFT MENU -->
-        <StackPanel Background="#1E1E1E">
+        <StackPanel Background="#123B3A"
+            Width="220">
 
-            <TextBlock Text="Islamic Tools"
-                       Foreground="White"
-                       FontSize="18"
-                       Margin="10"/>
+            <TextBlock Text="Islamic"
+               Foreground="#C9A24A"
+               FontSize="20"
+               FontWeight="Bold"
+               Margin="15"/>
 
-            <Button Content="Prayer Times" Click="Prayer_Click"/>
-            <Button Content="Next Prayer" Click="NextPrayer_Click"/>
-            <Button Content="Dhikr" Click="Dhikr_Click"/>
-            <Button Content="Quran" Click="Quran_Click"/>
-            <Button Content="Hijri Calendar" Click="Hijri_Click"/>
-            <Button Content="Fasting Days" Click="Fasting_Click"/>
-            <Button Content="99 Names" Click="Names_Click"/>
+            <Button Content="Prayer Times" Click="Prayer_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Next Prayer" Click="NextPrayer_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Dhikr" Click="Dhikr_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Quran" Click="Quran_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Hijri Calendar" Click="Hijri_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Fasting Days" Click="Fasting_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="99 Names" Click="Names_Click" Style="{StaticResource MenuButtonStyle}"/>
 
         </StackPanel>
 
         <!-- MAIN CONTENT -->
         <ContentControl x:Name="MainContent"
-                        Grid.Column="1"/>
+                Grid.Column="1"
+                Background="#F5F3EE"
+                Padding="20"/>
     </Grid>
 </Window>
