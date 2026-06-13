@@ -9,7 +9,7 @@ namespace IslamicCli.Command
     {
         public List<Dhikr>? GetAllAdhkar()
         {
-            string ResourceName = "IslamicCli.data.dhikr.json";
+            string ResourceName = "Islamic.Cli.data.dhikr.json";
             Stream Stream = EmbeddedResourceReader.GetAssemblyResource(ResourceName);
 
             List<Dhikr> DhikrList = EmbeddedResourceReader.ReadAssemblyToJson<Dhikr>(Stream);
@@ -25,7 +25,7 @@ namespace IslamicCli.Command
 
         public Dhikr? GetRandomDhikr()
         {
-            string ResourceName = "IslamicCli.data.dhikr.json";
+            string ResourceName = "Islamic.Cli.data.dhikr.json";
             Stream Stream = EmbeddedResourceReader.GetAssemblyResource(ResourceName);
             List<Dhikr> DhikrList = EmbeddedResourceReader.ReadAssemblyToJson<Dhikr>(Stream);
 

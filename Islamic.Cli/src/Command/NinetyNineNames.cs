@@ -7,7 +7,7 @@ namespace IslamicCli.Command
     {
         public List<NinetyNineNamesData>? GetAll()
         {
-            string ResourceName = "IslamicCli.data.99names.json";
+            string ResourceName = "Islamic.Cli.data.99names.json";
             Stream Stream = EmbeddedResourceReader.GetAssemblyResource(ResourceName);
 
             List<NinetyNineNamesData> Names = EmbeddedResourceReader.ReadAssemblyToJson<NinetyNineNamesData>(Stream);

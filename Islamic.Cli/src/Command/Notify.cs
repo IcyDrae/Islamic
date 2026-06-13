@@ -20,7 +20,7 @@ namespace IslamicCli.Command
             _pray = prayService;
             this.dateTime = dateTime ?? DateTime.Now;
             _audioFilePath = EmbeddedAudioExtractor.ExtractToTempFile(
-            "IslamicCli.data.adhan.mp3",
+            "Islamic.Cli.data.adhan.mp3",
             "islamiccli_adhan.mp3"
         );
         }

@@ -8,7 +8,7 @@ namespace IslamicCli.Command
     {
         public string ReadSurah(int id)
         {
-            string resourceName = "IslamicCli.data.quran_en.json";
+            string resourceName = "Islamic.Cli.data.quran_en.json";
             Stream stream = EmbeddedResourceReader.GetAssemblyResource(resourceName);
 
             List<QuranData> surahs = EmbeddedResourceReader.ReadAssemblyToJson<QuranData>(stream);
