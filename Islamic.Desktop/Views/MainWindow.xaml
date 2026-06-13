@@ -57,7 +57,7 @@
                Margin="15"/>
 
             <Button Content="Prayer Times" Click="Prayer_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="Next Prayer" Click="NextPrayer_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Tomorrow's Prayers" Click="Tomorrow_Click" Style="{StaticResource MenuButtonStyle}"/>
             <Button Content="Dhikr" Click="Dhikr_Click" Style="{StaticResource MenuButtonStyle}"/>
             <Button Content="Quran" Click="Quran_Click" Style="{StaticResource MenuButtonStyle}"/>
             <Button Content="Hijri Calendar" Click="Hijri_Click" Style="{StaticResource MenuButtonStyle}"/>

@@ -13,14 +13,18 @@ public partial class MainWindow : Window
     }
 
     private void Prayer_Click(object sender, RoutedEventArgs e)
-        => MainContent.Content = new PrayerPage();
+    {
+        MainContent.Content = new PrayerPage();
+    }
 
-    private void NextPrayer_Click(object sender, RoutedEventArgs e)
-        => MainContent.Content = new PrayerPage(showNextOnly: true);
+    private void Tomorrow_Click(object sender, RoutedEventArgs e)
+    {
+        MainContent.Content = new PrayerPage(showTomorrowsPrayers: true);
+    }
 
     private void Dhikr_Click(object sender, RoutedEventArgs e)
     {
-        //return MainContent.Content = new DhikrPage();
+        MainContent.Content = new DhikrPage();
     }
 
     private void Quran_Click(object sender, RoutedEventArgs e)

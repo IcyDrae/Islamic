@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11903.348
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IslamicCli", "IslamicCli", "{34B63A4B-6460-4DF7-C2BB-B582DF5BD4FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Islamic.Cli", "Islamic.Cli", "{34B63A4B-6460-4DF7-C2BB-B582DF5BD4FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Islamic-Cli", "IslamicCli\Islamic-Cli.csproj", "{A17DA899-97DA-44FA-9F02-1D82791FB6AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Islamic.Cli", "Islamic.Cli\Islamic.Cli.csproj", "{A17DA899-97DA-44FA-9F02-1D82791FB6AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamicCli.Tests", "IslamicCli.Tests\IslamicCli.Tests.csproj", "{D70F4287-5B2C-4A32-A91B-B696C4BA295F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Islamic.Cli.Tests", "Islamic.Cli.Tests\Islamic.Cli.Tests.csproj", "{D70F4287-5B2C-4A32-A91B-B696C4BA295F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamicDesktop", "IslamicDesktop\IslamicDesktop.csproj", "{A70540E8-A255-4779-8B31-7FBEFD708804}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Islamic.Desktop", "Islamic.Desktop\Islamic.Desktop.csproj", "{A70540E8-A255-4779-8B31-7FBEFD708804}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,6 +8,6 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
-      <ProjectReference Include="..\IslamicCli\Islamic-Cli.csproj" />
+      <ProjectReference Include="..\Islamic.Cli\Islamic.Cli.csproj" />
   </ItemGroup>
 </Project>

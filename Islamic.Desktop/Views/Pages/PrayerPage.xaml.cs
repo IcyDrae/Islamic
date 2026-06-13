@@ -5,11 +5,11 @@ namespace IslamicDesktop.Views.Pages;
 
 public partial class PrayerPage : UserControl
 {
-    public PrayerPage(bool showNextOnly = false)
+    public PrayerPage(bool showTomorrowsPrayers = false)
     {
         InitializeComponent();
 
-        if (showNextOnly)
+        if (showTomorrowsPrayers)
         {
             LoadNext();
         } else
