@@ -188,7 +188,7 @@ namespace IslamicCli.Command
             else if (parameters.Length > 0 && int.TryParse(parameters[0], out int surahNumber))
             {
                 string Surah = Quran.ReadSurah(surahNumber);
-                PrintScrollable(Surah);
+                Console.WriteLine(Surah);
             }
         }
 
@@ -220,7 +220,7 @@ namespace IslamicCli.Command
                     StringBuilder.AppendLine($"{Name.Arabic} - {Name.Transliteration} - {Name.English}");
                 }
 
-                PrintScrollable(StringBuilder.ToString());
+                Console.WriteLine(StringBuilder.ToString());
             }
         }
 
@@ -271,19 +271,6 @@ namespace IslamicCli.Command
             Console.WriteLine($"{RandomDhikr.Text} ({RandomDhikr.Translation}) - Repeat {RandomDhikr.Count} times");
             Console.WriteLine("----------------------------------------------------------");
             Console.WriteLine();
-        }
-
-        private void PrintScrollable(string text)
-        {
-            var process = new Process();
-            process.StartInfo.FileName = "more";
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.UseShellExecute = false;
-
-            process.Start();
-            process.StandardInput.Write(text);
-            process.StandardInput.Close();
-            process.WaitForExit();
         }
     }
 }

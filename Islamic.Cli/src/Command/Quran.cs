@@ -24,6 +24,7 @@ namespace IslamicCli.Command
 
             foreach (var ayah in surah.Verses)
             {
+                sb.AppendLine($"{ayah.Id}. {ayah.Text}");
                 sb.AppendLine($"{ayah.Id}. {ayah.Translation}");
             }
 

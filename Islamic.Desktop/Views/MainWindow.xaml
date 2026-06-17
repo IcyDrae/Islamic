@@ -47,7 +47,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- LEFT MENU -->
-        <StackPanel Background="#123B3A"
+        <StackPanel x:Name="MenuPanel" Background="#123B3A"
             Width="220">
 
             <TextBlock Text="Islamic"
@@ -56,13 +56,13 @@
                FontWeight="Bold"
                Margin="15"/>
 
-            <Button Content="Prayer Times" Click="Prayer_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="Tomorrow's Prayers" Click="Tomorrow_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="Dhikr" Click="Dhikr_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="Quran" Click="Quran_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="Hijri Calendar" Click="Hijri_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="Fasting Days" Click="Fasting_Click" Style="{StaticResource MenuButtonStyle}"/>
-            <Button Content="99 Names" Click="Names_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Prayer Times" Tag="Prayer" Click="Prayer_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Tomorrow's Prayers" Tag="Tomorrow" Click="Tomorrow_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Dhikr" Tag="Dhikr" Click="Dhikr_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Quran" Tag="Quran" Click="Quran_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Hijri Calendar" Tag="Hijri" Click="Hijri_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="Fasting Days" Tag="Fasting" Click="Fasting_Click" Style="{StaticResource MenuButtonStyle}"/>
+            <Button Content="99 Names" Tag="Names" Click="Names_Click" Style="{StaticResource MenuButtonStyle}"/>
 
         </StackPanel>
 
