@@ -32,7 +32,19 @@ namespace IslamicCli.Command
             sb.AppendLine();
             sb.AppendLine(GetWeekDaysHeader());
             sb.Append(BuildCalendarDays(day, month, year, daysInMonth, useColors));
-            sb.Append(BuildRamadanInfo(day, month, year, daysInMonth, useColors));
+
+            var ramadan = BuildRamadanInfo();
+
+            if (ramadan.isRamadan)
+            {
+                sb.AppendLine();
+                sb.AppendLine($"Ramadan Mubarak! Day {ramadan.dayOfRamadan} of {ramadan.daysInMonth}");
+            }
+            else if (month < 9)
+            {
+                sb.AppendLine();
+                sb.AppendLine($"Days until Ramadan: {ramadan.daysUntilRamadan}");
+            }
 
             return sb.ToString();
         }
@@ -73,28 +85,29 @@ namespace IslamicCli.Command
             return sb.ToString();
         }
 
-        private string BuildRamadanInfo(int day, int month, int year, int daysInMonth, bool useColors)
+        public (bool isRamadan, int dayOfRamadan, int daysInMonth, int daysUntilRamadan) BuildRamadanInfo()
         {
-            var sb = new StringBuilder();
+            var today = DateTime.Now;
+
+            int day = _hijri.GetDayOfMonth(today);
+            int month = _hijri.GetMonth(today);
+            int year = _hijri.GetYear(today);
+
             int ramadanMonth = 9;
+            int daysInMonth = _hijri.GetDaysInMonth(year, month);
 
             if (month < ramadanMonth)
             {
-                int daysUntilRamadan = CalculateDaysUntilRamadan(day, month, year, ramadanMonth);
-                sb.AppendLine();
-                sb.AppendLine(useColors
-                              ? $"\u001b[1;36mDays until Ramadan: {daysUntilRamadan}\u001b[0m"
-                              : $"Days until Ramadan: {daysUntilRamadan}");
-            }
-            else if (month == ramadanMonth)
-            {
-                sb.AppendLine();
-               sb.AppendLine(useColors
-                             ? $"\u001b[1;36mRamadan Mubarak! Today is day {day} out of {daysInMonth} of Ramadan.\u001b[0m"
-                             : $"Ramadan Mubarak! Today is day {day} out of {daysInMonth} of Ramadan.");
+                int daysUntil = CalculateDaysUntilRamadan(day, month, year, ramadanMonth);
+                return (false, 0, daysInMonth, daysUntil);
             }
 
-            return sb.ToString();
+            if (month == ramadanMonth)
+            {
+                return (true, day, daysInMonth, 0);
+            }
+
+            return (false, 0, daysInMonth, 0);
         }
 
         private int CalculateDaysUntilRamadan(int currentDay, int currentMonth, int year, int ramadanMonth)
@@ -105,6 +118,42 @@ namespace IslamicCli.Command
                 days += _hijri.GetDaysInMonth(year, m);
             }
             return days;
+        }
+
+        public int GetCurrentHijriDay()
+        {
+            return _hijri.GetDayOfMonth(DateTime.Now);
+        }
+
+        public int GetCurrentHijriMonth()
+        {
+            return _hijri.GetMonth(DateTime.Now);
+        }
+
+        public int GetCurrentHijriYear()
+        {
+            return _hijri.GetYear(DateTime.Now);
+        }
+
+        public int GetDaysInCurrentMonth()
+        {
+            return _hijri.GetDaysInMonth(
+                GetCurrentHijriYear(),
+                GetCurrentHijriMonth());
+        }
+
+        public string GetCurrentMonthName()
+        {
+            return HijriMonths[GetCurrentHijriMonth() - 1];
+        }
+
+        public int GetMonthStartDayOfWeek()
+        {
+            var year = GetCurrentHijriYear();
+            var month = GetCurrentHijriMonth();
+
+            DateTime firstDay = _hijri.ToDateTime(year, month, 1, 0, 0, 0, 0);
+            return ((int)firstDay.DayOfWeek + 6) % 7;
         }
     }
 }

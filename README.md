@@ -1,8 +1,19 @@
 # Islamic
 
+![Logo](./Islamic.Desktop/Assets/Logo.png)
+
 Islamic is a simple, cross-platform command-line application and desktop application (for Windows 10 and 11) written in C# that provides daily Islamic utilities directly in the terminal and also as a desktop application. It focuses on prayer times, dhikr, Qur'an reading, and Hijri dates, all fetched automatically based on your location without manual configuration.
 
-## Features of IslamicCli
+1. Prayer times
+![Prayer Times](./Islamic.Desktop/Assets/Screenshot-PrayerTimes.png)
+
+2. Adhkar(remembrance)
+![Dhikr](./Islamic.Desktop/Assets/Screenshot-Dhikr.png)
+
+3. Hijri calendar
+![Hijri](./Islamic.Desktop/Assets/Screenshot-Hijri.png)
+
+## Features of Islamic and Islamic.Cli
 
 - Automatic prayer times based on your location (via Latitude and Longitude)
 - Display today’s full prayer schedule
@@ -13,7 +24,11 @@ Islamic is a simple, cross-platform command-line application and desktop applica
 - Cross-platform support (Windows, Linux, macOS Intel & Apple Silicon)
 - Lightweight, fast, no external dependencies
 
-## Installation
+## Installation of the desktop application
+
+Go to the releases page and download the latest version of Islamic.Desktop for Windows 10 or 11. Run the installer and follow the instructions.
+
+## Installation of the CLI application
 
 Download the binary for your operating system and place it in a directory included in your PATH.
 

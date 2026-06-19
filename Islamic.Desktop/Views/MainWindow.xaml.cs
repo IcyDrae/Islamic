@@ -77,19 +77,19 @@ public partial class MainWindow : Window
 
     private void Hijri_Click(object sender, RoutedEventArgs e)
     {
-        //MainContent.Content = new HijriPage();
+        MainContent.Content = new HijriPage();
         SetActive("Hijri");
     }
 
     private void Fasting_Click(object sender, RoutedEventArgs e)
     {
-        //MainContent.Content = new FastingPage();
+        MainContent.Content = new FastingPage();
         SetActive("Fasting");
     }
 
     private void Names_Click(object sender, RoutedEventArgs e)
     {
-        //=> MainContent.Content = new NamesPage();
+        MainContent.Content = new NinetyNineNamesPage();
         SetActive("Names");
     }
 }
