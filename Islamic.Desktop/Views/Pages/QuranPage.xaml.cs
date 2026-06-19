@@ -41,7 +41,7 @@ namespace IslamicDesktop.Views.Pages
             foreach (var ayah in surah.Verses)
             {
                 sb.AppendLine($"{ayah.Id}. {ayah.Text}");
-                sb.AppendLine($"{ayah.Id}. {ayah.Translation}");
+                sb.AppendLine($"{ayah.Translation}");
                 sb.AppendLine();
             }
 

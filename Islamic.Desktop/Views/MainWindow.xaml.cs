@@ -37,11 +37,15 @@ public partial class MainWindow : Window
                 {
                     btn.Background = new SolidColorBrush(Color.FromRgb(201, 162, 74)); // gold
                     btn.Foreground = new SolidColorBrush(Colors.Black);
+                    // Disable hover for active button
+                    btn.IsHitTestVisible = false;
                 }
                 else
                 {
                     btn.Background = Brushes.Transparent;
-                    btn.Foreground = new SolidColorBrush(Color.FromRgb(232, 230, 225));
+                    btn.Foreground = new SolidColorBrush(
+                        Color.FromRgb(232, 230, 225));
+                    btn.IsHitTestVisible = true;
                 }
             }
         }

@@ -17,23 +17,35 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
+
+                        <Border x:Name="ButtonBorder"
+                            Background="{TemplateBinding Background}"
                             CornerRadius="6">
 
                             <ContentPresenter Margin="10,5"/>
+
                         </Border>
 
                         <ControlTemplate.Triggers>
+
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#1B5E5B"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter TargetName="ButtonBorder"
+                                    Property="Background"
+                                    Value="#1B5E5B"/>
+                                                <Setter Property="Foreground"
+                                    Value="White"/>
                             </Trigger>
 
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#C9A24A"/>
-                                <Setter Property="Foreground" Value="#0F3D3E"/>
+                                <Setter TargetName="ButtonBorder"
+                                    Property="Background"
+                                    Value="#C9A24A"/>
+                                <Setter Property="Foreground"
+                                    Value="#0F3D3E"/>
                             </Trigger>
+
                         </ControlTemplate.Triggers>
+
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
