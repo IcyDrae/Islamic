@@ -1,6 +1,3 @@
-# Emacs auto-save files
-*#
-
 .vs/
 **/.vs/
 
@@ -9,5 +6,3 @@ obj/
 
 .vscode/
 .idea/
-
-.DS_Store
