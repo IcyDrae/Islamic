@@ -10,18 +10,9 @@ public class App
     public static void main(String[] args) throws Exception
     {
         PrayerTimesService PrayerTimesService = new PrayerTimesService();
-        PrayerTimesResponse PrayersOfToday = PrayerTimesService.fetchAllPrayerTimesForToday();
 
-        NextPrayer NextPrayer = PrayerTimesService.fetchNextPrayerTime(
-            PrayersOfToday
-            .getData()
-            .getTimings()
-        );
-
-        System.out.println("Next prayer: " +
-            NextPrayer.getName()
-            + " at: " +
-            NextPrayer.getTime()
+        System.out.println("Prayer times of tomorrow: " +
+            PrayerTimesService.fetchTomorrowPrayerTimes().getData().getTimings().getFajr()
         );
     }
 }

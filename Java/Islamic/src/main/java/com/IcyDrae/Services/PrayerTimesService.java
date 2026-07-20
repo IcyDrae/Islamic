@@ -1,5 +1,6 @@
 package com.IcyDrae.Services;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
@@ -64,5 +65,24 @@ public class PrayerTimesService {
 
         // All prayers have passed, next prayer is tomorrow's Fajr
         return new NextPrayer("Fajr", LocalTime.parse(Timings.Fajr, FORMATTER));
+    }
+
+    public PrayerTimesResponse fetchTomorrowPrayerTimes() throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        LocalDate tomorrow = LocalDate.now().plusDays(1);
+        String tomorrowFormatted =
+                tomorrow.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+        String url =
+                "https://api.aladhan.com/v1/timings/"
+                + tomorrowFormatted
+                + "?latitude=" + this.Location.getLat()
+                + "&longitude=" + this.Location.getLon()
+                + "&method=3";
+
+        String response = this.Request.Get(url);
+
+        return objectMapper.readValue(response, PrayerTimesResponse.class);
     }
 }
