@@ -1,14 +1,14 @@
-package com.IcyDrae;
+package com.IcyDrae.Services;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Request {
+public class RequestService {
     private final HttpClient client;
 
-    public Request() {
+    public RequestService() {
         client = HttpClient.newHttpClient();
     }
 

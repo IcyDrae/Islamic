@@ -1,14 +1,13 @@
 package com.IcyDrae.Services;
 
-import com.IcyDrae.Request;
 import com.IcyDrae.Data.Location;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class LocationService {
-    Request Request;
+    RequestService Request;
 
     public LocationService() {
-        this.Request = new Request();
+        this.Request = new RequestService();
     }
 
     public Location fetchLocation() throws Exception {
