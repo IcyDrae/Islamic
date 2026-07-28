@@ -1,44 +1,22 @@
 package com.IcyDrae;
 
-import com.IcyDrae.Data.FastingDays;
-import com.IcyDrae.Services.FastingDaysService;
+import com.IcyDrae.Data.NinetyNineName;
+import com.IcyDrae.Services.NinetyNineNamesService;
+import java.util.List;
 
 public class App {
+    public static void main(String[] args) throws Exception {
+        NinetyNineNamesService service = new NinetyNineNamesService();
 
-    public static void main(String[] args) {
-        FastingDaysService service = new FastingDaysService();
-        FastingDays fasting = service.getFastingInfo();
+        List<NinetyNineName> names = service.getAll();
 
-        System.out.println("=== Recommended Fasting Days ===");
-        System.out.println();
-
-        if (fasting.isMondayThursday()) {
+        for (NinetyNineName name : names) {
             System.out.println(
-                "✓ Monday/Thursday fasting recommended today"
-            );
-        }
-
-        if (fasting.isWhiteDays()) {
-            System.out.println(
-                "✓ White Day fasting recommended today"
-            );
-        }
-
-        if (fasting.isRamadan()) {
-            System.out.println(
-                "✓ Ramadan fasting - Day "
-                + fasting.getRamadanDay()
-            );
-        }
-
-        System.out.println();
-        System.out.println("Voluntary fasting:");
-
-        for (String recommendation :
-                fasting.getVoluntaryRecommendations()) {
-
-            System.out.println(
-                "- " + recommendation
+                name.getArabic()
+                + " - "
+                + name.getTransliteration()
+                + " - "
+                + name.getEnglish()
             );
         }
     }
