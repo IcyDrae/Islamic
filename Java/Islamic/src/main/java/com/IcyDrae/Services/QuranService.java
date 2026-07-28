@@ -11,12 +11,6 @@ public class QuranService {
 
     }
 
-    /*
-    1. Read quran_en.json
-    2. Filter using page number(integer)
-    3. Print in terminal
-    */
-
     public Surah getSurah(int Number) throws Exception {
         ObjectMapper ObjectMapper = new ObjectMapper();
 
