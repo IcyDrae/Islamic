@@ -1,18 +1,18 @@
 package com.IcyDrae;
 
-import com.IcyDrae.Data.NextPrayer;
-import com.IcyDrae.Data.PrayerTimesResponse;
-import com.IcyDrae.Services.LocationService;
-import com.IcyDrae.Services.PrayerTimesService;
+import java.util.List;
+
+import com.IcyDrae.Data.Dhikr;
+import com.IcyDrae.Services.AdhkarService;
 
 public class App 
 {
     public static void main(String[] args) throws Exception
     {
-        PrayerTimesService PrayerTimesService = new PrayerTimesService();
+        AdhkarService AdhkarService = new AdhkarService();
 
-        System.out.println("Prayer times of tomorrow: " +
-            PrayerTimesService.fetchTomorrowPrayerTimes().getData().getTimings().getFajr()
-        );
+        Dhikr RandomDhikr = AdhkarService.getRandom();
+
+        System.out.println(RandomDhikr.getText());
     }
 }

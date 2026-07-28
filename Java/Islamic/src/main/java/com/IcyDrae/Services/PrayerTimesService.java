@@ -24,7 +24,7 @@ public class PrayerTimesService {
         this.Location = this.LocationService.fetchLocation();
     }
 
-    public PrayerTimesResponse fetchAllPrayerTimesForToday() throws Exception {
+    public PrayerTimesResponse fetchForToday() throws Exception {
         ObjectMapper ObjectMapper = new ObjectMapper();
 
         String URL = "https://api.aladhan.com/v1/timings/now?latitude="
@@ -43,7 +43,7 @@ public class PrayerTimesService {
         return Response;
     }
 
-    public NextPrayer fetchNextPrayerTime(Timings Timings) throws Exception {
+    public NextPrayer fetchNext(Timings Timings) throws Exception {
         Map<String, String> Prayers = new LinkedHashMap<>();
 
         Prayers.put("Fajr", Timings.Fajr);
@@ -67,7 +67,7 @@ public class PrayerTimesService {
         return new NextPrayer("Fajr", LocalTime.parse(Timings.Fajr, FORMATTER));
     }
 
-    public PrayerTimesResponse fetchTomorrowPrayerTimes() throws Exception {
+    public PrayerTimesResponse fetchForTomorrow() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
 
         LocalDate tomorrow = LocalDate.now().plusDays(1);
