@@ -1,4 +1,4 @@
-name: Continous Integration Pipeline
+name: Java Continous Integration Pipeline
 on:
   push:
     branches:
