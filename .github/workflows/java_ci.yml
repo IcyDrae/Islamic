@@ -25,3 +25,10 @@ jobs:
         run: mvn clean package
       - name: Run tests
         run: mvn test
+      - name: Build JAR
+        run: mvn clean package
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: Islamic-JAR
+          path: Java/Islamic/target/*.jar
