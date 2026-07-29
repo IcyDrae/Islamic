@@ -16,7 +16,7 @@
     <left>
 
         <VBox fx:id="menuPanel"
-              prefWidth="220"
+              prefWidth="320"
               style="-fx-background-color:#123B3A;">
 
             <padding>

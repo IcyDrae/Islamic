@@ -1,6 +1,6 @@
 package com.IcyDrae.Services;
 
-import com.IcyDrae.Data.NinetyNineName;
+import com.IcyDrae.Data.NinetyNineNames;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
@@ -9,10 +9,10 @@ import java.util.List;
 public class NinetyNineNamesService {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public List<NinetyNineName> getAll() throws Exception {
+    public List<NinetyNineNames> getAll() throws Exception {
         return objectMapper.readValue(
             readFile(),
-            new TypeReference<List<NinetyNineName>>() {}
+            new TypeReference<List<NinetyNineNames>>() {}
         );
     }
 

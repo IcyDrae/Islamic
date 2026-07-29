@@ -134,7 +134,7 @@ public class MainController {
 
     @FXML
     private void namesClicked() throws Exception {
-        loadPage("/Views/NinetyNineNames.fxml");
+        loadPage("/Views/Names.fxml");
         setActive("Names");
     }
 }

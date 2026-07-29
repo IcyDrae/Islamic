@@ -1,6 +1,6 @@
 package com.IcyDrae.Data;
 
-public class NinetyNineName {
+public class NinetyNineNames {
     private String arabic;
     private String transliteration;
     private String english;
