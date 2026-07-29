@@ -1,6 +1,8 @@
 package com.IcyDrae.Controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
@@ -25,11 +27,17 @@ public class MainController {
     private String activePage = "Prayer";
 
     @FXML
-    public void initialize() {
-        // Later:
-        // mainContent.getChildren()
-        // .add(new PrayerPage());
+    public void initialize() throws Exception {
+        // Load default page
+        loadPage("/Views/Prayer.fxml");
         setActive("Prayer");
+    }
+
+    private void loadPage(String path) throws Exception {
+        Parent view = FXMLLoader.load(
+                getClass().getResource(path)
+        );
+        mainContent.getChildren().setAll(view);
     }
 
     private void setActive(String page) {
@@ -46,7 +54,7 @@ public class MainController {
         reset(fastingButton);
         reset(namesButton);
 
-        switch(activePage) {
+        switch (activePage) {
             case "Prayer" ->
                     activate(prayerButton);
             case "Tomorrow" ->
@@ -73,8 +81,8 @@ public class MainController {
                 -fx-font-size:16px;
                 """
         );
-
-        button.setDisable(true);
+        // Do NOT disable it
+        button.setDisable(false);
     }
 
     private void reset(Button button) {
@@ -89,38 +97,44 @@ public class MainController {
     }
 
     @FXML
-    private void prayerClicked() {
-        // load Prayer page
+    private void prayerClicked() throws Exception {
+        loadPage("/Views/Prayer.fxml");
         setActive("Prayer");
     }
 
     @FXML
-    private void tomorrowClicked() {
+    private void tomorrowClicked() throws Exception {
+        loadPage("/Views/Tomorrow.fxml");
         setActive("Tomorrow");
     }
 
     @FXML
-    private void dhikrClicked() {
+    private void dhikrClicked() throws Exception {
+        loadPage("/Views/Dhikr.fxml");
         setActive("Dhikr");
     }
 
     @FXML
-    private void quranClicked() {
+    private void quranClicked() throws Exception {
+        loadPage("/Views/Quran.fxml");
         setActive("Quran");
     }
 
     @FXML
-    private void hijriClicked() {
+    private void hijriClicked() throws Exception {
+        loadPage("/Views/Hijri.fxml");
         setActive("Hijri");
     }
 
     @FXML
-    private void fastingClicked() {
+    private void fastingClicked() throws Exception {
+        loadPage("/Views/Fasting.fxml");
         setActive("Fasting");
     }
 
     @FXML
-    private void namesClicked() {
+    private void namesClicked() throws Exception {
+        loadPage("/Views/NinetyNineNames.fxml");
         setActive("Names");
     }
 }

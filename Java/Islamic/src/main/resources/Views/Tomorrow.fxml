@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.IcyDrae.Controllers.TomorrowController"
+      spacing="20"
+      alignment="TOP_CENTER"
+      style="-fx-padding:30;">
+
+    <Label text="Prayer Times for tomorrow"
+           style="-fx-font-size:32px; -fx-font-weight:bold;"/>
+
+    <Label fx:id="fajrLabelTomorrow"/>
+    <Label fx:id="sunriseLabelTomorrow"/>
+    <Label fx:id="dhuhrLabelTomorrow"/>
+    <Label fx:id="asrLabelTomorrow"/>
+    <Label fx:id="maghribLabelTomorrow"/>
+    <Label fx:id="ishaLabelTomorrow"/>
+
+</VBox>

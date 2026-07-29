@@ -4,10 +4,17 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.text.Font;
 
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        Font.loadFont(
+            getClass()
+            .getResourceAsStream("/Fonts/NotoNaskhArabic-Regular.ttf"),
+            12
+        );
+
         FXMLLoader loader =
                 new FXMLLoader(
                     getClass()

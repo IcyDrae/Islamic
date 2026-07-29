@@ -130,6 +130,7 @@
                    style="
                         -fx-background-color:#F5F3EE;
                         -fx-padding:20;
+                        -fx-font-size: 20px;
                    "/>
 
     </center>
