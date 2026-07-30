@@ -98,6 +98,7 @@ public class PrayerNotificationService {
             }
         }
 
+        showNotification(nextPrayer.getName());
         playAdhan();
 
         if (listener != null) {
@@ -127,6 +128,19 @@ public class PrayerNotificationService {
             Clip clip = AudioSystem.getClip();
             clip.open(ais);
             clip.start();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showNotification(String prayerName) {
+        try {
+            new ProcessBuilder(
+                "notify-send",
+                "🕌 Prayer Time",
+                prayerName + " has begun.\nTime for Salah."
+            ).start();
         }
         catch (Exception e) {
             e.printStackTrace();
