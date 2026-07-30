@@ -9,4 +9,6 @@ obj/
 
 # Java / Maven
 target/
+
+# Project management/tasks
 TODO.md

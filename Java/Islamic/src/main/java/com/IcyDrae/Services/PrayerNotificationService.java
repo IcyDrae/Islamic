@@ -1,7 +1,6 @@
 package com.IcyDrae.Services;
 
 import javax.sound.sampled.*;
-import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -114,20 +113,23 @@ public class PrayerNotificationService {
 
     private void playAdhan() {
         try {
-            InputStream audio = getClass().getResourceAsStream("/adhan.mp3");
+            InputStream audio = getClass().getResourceAsStream("/adhan.wav");
 
             if (audio == null) {
-                System.out.println("adhan.mp3 not found");
+                System.out.println("adhan.wav not found");
 
                 return;
             }
 
-            BufferedInputStream buffered = new BufferedInputStream(audio);
-            AudioInputStream ais = AudioSystem.getAudioInputStream(buffered);
-
+            AudioInputStream ais = AudioSystem.getAudioInputStream(audio);
             Clip clip = AudioSystem.getClip();
             clip.open(ais);
             clip.start();
+            clip.addLineListener(event -> {
+                if (event.getType() == LineEvent.Type.STOP) {
+                    clip.close();
+                }
+            });
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -145,5 +147,21 @@ public class PrayerNotificationService {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void testNotification(String prayerName) {
+        new Thread(() -> {
+            try {
+                System.out.println("Testing notification...");
+                playAdhan();
+                showNotification(prayerName);
+                if (listener != null) {
+                    listener.onAdhanPlayed(prayerName);
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }
