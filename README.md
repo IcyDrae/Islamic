@@ -1,32 +1,34 @@
 # Islamic
 
-![Logo](./Islamic.Desktop/Assets/Logo.png)
+![Logo](./Java/Islamic/src/main/resources/Logo.png)
 
 Islamic is a simple, Linux desktop application written in Java that provides daily Islamic utilities. It focuses on prayer times, dhikr, Qur'an reading, and Hijri dates, all fetched automatically based on your location without manual configuration.
 
-1. Prayer times
-![Prayer Times](./Islamic.Desktop/Assets/Screenshot-PrayerTimes.png)
+1. Prayer times and the notifier
+![Prayer Times](./Java/Islamic/src/main/resources/Assets/01.png)
 
-2. Adhkar(remembrance)
-![Dhikr](./Islamic.Desktop/Assets/Screenshot-Dhikr.png)
+2. Qur'an
+![Dhikr](./Java/Islamic/src/main/resources/Assets/02.png)
 
 3. Hijri calendar
-![Hijri](./Islamic.Desktop/Assets/Screenshot-Hijri.png)
+![Hijri](./Java/Islamic/src/main/resources/Assets/03.png)
 
-## Features of Islamic and Islamic.Cli
+4. 99 Names of Allah SWT
+![Hijri](./Java/Islamic/src/main/resources/Assets/04.png)
 
-- Automatic prayer times based on your location (via Latitude and Longitude)
+## Features of Islamic
+
+- Automatic prayer times based on your location (via IP Address, Latitude and Longitude)
 - Display today’s full prayer schedule
 - Show the next upcoming prayer
+- Notify using Adhan and system notification 10 minutes before each prayer
 - A list of common Adhkar
 - Qur'an reading
 - Notifies 10 minutes before each prayer using an Adhan and a system notification.
-- Cross-platform support (Windows, Linux, macOS Intel & Apple Silicon)
-- Lightweight, fast, no external dependencies
 
 ## Installation of the desktop application
 
-Go to the releases page and download the latest version of Islamic.Desktop for Windows 10 or 11. Run the installer and follow the instructions.
+Go to the releases page and download the latest version of Islamic.Desktop for Linux. Run the installer and follow the instructions.
 
 ### Data Sources
 
@@ -38,11 +40,20 @@ Qur'an: Local JSON file
 
 Adhan: Local mp3 file
 
-Hijri: HijriCalendar class from .NET library
+Hijri: HijrahDate class from Java library
 
 ### Philosophy
 
 Islamic aims to be minimal, respectful, and distraction-free.
 No tracking, no ads, no unnecessary complexity.
 
-Built for Muslims who live in the terminal.
+Built for Muslims who live in Linux.
+
+## Legacy
+
+For the legacy version, go into the folder named C#, there you will find the CLI version and the Windows desktop version.
+
+## License
+
+GPLv3
+
