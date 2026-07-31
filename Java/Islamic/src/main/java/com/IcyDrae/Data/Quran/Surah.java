@@ -69,4 +69,9 @@ public class Surah {
     public void setVerses(List<Ayah> verses) {
         this.verses = verses;
     }
+
+    @Override
+    public String toString() {
+        return id + " - " + this.transliteration;
+    }
 }

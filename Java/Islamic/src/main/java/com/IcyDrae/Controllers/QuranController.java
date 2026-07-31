@@ -14,32 +14,32 @@ import javafx.scene.text.TextAlignment;
 
 public class QuranController {
     @FXML
-    private ComboBox<Integer> surahSelector;
+    private ComboBox<Surah> surahSelector;
     @FXML
     private ScrollPane scrollPane;
     private final QuranService quranService = new QuranService();
 
     @FXML
-    public void initialize() {
+    public void initialize() throws Exception {
         // Load 114 Surahs
-        for(int i = 1; i <= 114; i++) {
-            surahSelector.getItems()
-                    .add(i);
-        }
+        surahSelector.getItems().addAll(
+            quranService.getSurahs()
+        );
 
-        surahSelector.setValue(1);
-        loadSurah(1);
+        surahSelector.getSelectionModel().selectFirst();
+        loadSurah(
+            surahSelector.getValue().getId()
+        );
     }
 
     @FXML
     private void surahChanged() {
-        Integer number =
-                surahSelector.getValue();
+        Surah surah = surahSelector.getValue();
 
-        if(number == null)
+        if(surah == null)
             return;
 
-        loadSurah(number);
+        loadSurah(surah.getId());
     }
 
     private void loadSurah(int number) {

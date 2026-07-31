@@ -15,6 +15,7 @@ public class HijriController {
     private Label weekdayLabel;
     @FXML
     private GridPane calendarGrid;
+    @SuppressWarnings("unused")
     private HijriCalendarService service;
 
     private final String[] weekDays =

@@ -7,20 +7,33 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 
 public class QuranService {
-    public QuranService() {
+    private final List<Surah> surahs;
 
+    public QuranService() {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            this.surahs = objectMapper.readValue(
+                readFile(),
+                new TypeReference<List<Surah>>() {}
+            );
+        }
+        catch (Exception e) {
+            throw new RuntimeException(
+                "Failed to load Quran",
+                e
+            );
+        }
     }
 
-    public Surah getSurah(int Number) throws Exception {
-        ObjectMapper ObjectMapper = new ObjectMapper();
+    public List<Surah> getSurahs() throws Exception {
+        return this.surahs;
+    }
 
-        List<Surah> Surahs = ObjectMapper.readValue(
-            this.readFile(),
-            new TypeReference<List<Surah>>() {}
-        );
 
-        return Surahs.stream()
-                .filter(Surah -> Surah.getId() == Number)
+    public Surah getSurah(int number) {
+        return this.surahs.stream()
+                .filter(surah -> surah.getId() == number)
                 .findFirst()
                 .orElse(null);
     }
