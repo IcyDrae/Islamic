@@ -7,6 +7,7 @@ import javafx.scene.layout.GridPane;
 import java.time.LocalDate;
 import java.time.chrono.HijrahDate;
 import java.time.temporal.ChronoField;
+import javafx.scene.control.Tooltip;
 
 public class HijriController {
     @FXML
@@ -168,6 +169,42 @@ public class HijriController {
                 -fx-background-radius:50;
                 """
             );
+        }
+
+        if (day == 13 || day == 14 || day == 15) {
+            label.setStyle(
+                """
+                -fx-background-color: lightgrey;
+                -fx-text-fill:black;
+                -fx-font-size:22px;
+                -fx-background-radius:50;
+                """
+            );
+
+            label.setOnMouseEntered(e ->
+                label.setStyle("""
+                    -fx-background-color:#C9A24A;
+                    -fx-text-fill:black;
+                    -fx-font-size:22px;
+                    -fx-background-radius:50;
+                    -fx-cursor:hand;
+                    """)
+            );
+
+            label.setOnMouseExited(e ->
+                label.setStyle("""
+                    -fx-background-color:lightgrey;
+                    -fx-text-fill:black;
+                    -fx-font-size:22px;
+                    -fx-background-radius:50;
+                    """)
+            );
+
+            Tooltip tooltip = new Tooltip(
+                "White Days (Ayyam al-Bid)\nRecommended Sunnah fasting."
+            );
+            tooltip.setShowDelay(javafx.util.Duration.millis(100));
+            label.setTooltip(tooltip);
         }
 
         return label;
