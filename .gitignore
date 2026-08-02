@@ -9,6 +9,8 @@ obj/
 
 # Java / Maven
 target/
+Islamic/
+javafx-lib/
 
 # Project management/tasks
 TODO.md

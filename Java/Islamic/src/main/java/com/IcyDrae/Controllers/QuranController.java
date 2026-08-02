@@ -11,6 +11,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.text.TextAlignment;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Pos;
 
 public class QuranController {
     @FXML
@@ -46,22 +48,14 @@ public class QuranController {
     private void loadSurah(int number) {
         try {
             Surah surah = quranService.getSurah(number);
-            TextFlow flow = new TextFlow();
-
-            flow.setNodeOrientation(
-                NodeOrientation.RIGHT_TO_LEFT
-            );
-
-            flow.setTextAlignment(
-                TextAlignment.CENTER
-            );
-
-            flow.setStyle(
-                """
+            VBox flow = new VBox(20);
+            flow.prefWidthProperty()
+            .bind(scrollPane.widthProperty());
+            flow.setAlignment(Pos.CENTER);
+            flow.setStyle("""
                 -fx-padding:30;
                 -fx-background-color:#F5F3EE;
-                """
-            );
+            """);
 
             // Surah title
             Text title = new Text(
@@ -136,11 +130,23 @@ public class QuranController {
                 /*
                 * Arabic text
                 */
+                TextFlow arabicFlow = new TextFlow();
+                arabicFlow.setMaxWidth(1000);
+                arabicFlow.prefWidthProperty()
+                        .bind(scrollPane.widthProperty().subtract(100));
+                arabicFlow.setNodeOrientation(
+                        NodeOrientation.RIGHT_TO_LEFT
+                );
+                arabicFlow.setTextAlignment(
+                        TextAlignment.CENTER
+                );
                 Text arabic = new Text(
                     ayah.getText()
                     +
                     "\n\n"
                 );
+                arabic.setTextAlignment(TextAlignment.RIGHT);
+                arabic.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
 
                 arabic.setFont(
                     Font.font(
@@ -153,6 +159,7 @@ public class QuranController {
                     -fx-fill:#123B3A;
                     """
                 );
+                arabicFlow.getChildren().add(arabic);
 
                 /*
                 * Translation
@@ -162,6 +169,9 @@ public class QuranController {
                     +
                     "\n"
                 );
+                translation.wrappingWidthProperty()
+                .bind(scrollPane.widthProperty().subtract(100));
+                translation.setTextAlignment(TextAlignment.CENTER);
                 translation.setFont(
                     Font.font(
                         "Sans",
@@ -185,7 +195,7 @@ public class QuranController {
                 flow.getChildren().addAll(
                     separatorTop,
                     number1,
-                    arabic,
+                    arabicFlow,
                     translation,
                     spacing
                 );
