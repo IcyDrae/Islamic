@@ -11,7 +11,10 @@
       style="-fx-padding:30;">
 
     <Label text="Prayer Times for tomorrow"
-           style="-fx-font-size:32px; -fx-font-weight:bold;"/>
+           style="
+           -fx-font-size:32px;
+           -fx-font-weight:bold;
+           -fx-text-fill:#C9A24A;"/>
 
     <Label fx:id="fajrLabelTomorrow"/>
     <Label fx:id="sunriseLabelTomorrow"/>
