@@ -30,6 +30,7 @@ public class QuranController {
         loadSurah(
             surahSelector.getValue().getId()
         );
+        surahSelector.setVisibleRowCount(5);
     }
 
     @FXML

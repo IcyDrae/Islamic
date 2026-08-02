@@ -32,6 +32,9 @@ public class App extends Application {
 
         Scene scene = new Scene(loader.load());
 
+        scene.getStylesheets().add(
+            getClass().getResource("/style.css").toExternalForm()
+        );
         stage.setTitle("Islamic");
         stage.setMaximized(true);
         stage.setScene(scene);

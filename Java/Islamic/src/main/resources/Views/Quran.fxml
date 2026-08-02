@@ -19,7 +19,8 @@
                   alignment="CENTER">
                 <ComboBox fx:id="surahSelector"
                           prefWidth="250"
-                          onAction="#surahChanged"/>
+                          onAction="#surahChanged"
+                          styleClass="surah-selector"/>
             </HBox>
         </VBox>
     </top>

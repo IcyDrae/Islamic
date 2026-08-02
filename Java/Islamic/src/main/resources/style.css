@@ -1,0 +1,152 @@
+/* Global ScrollPane scrollbar */
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+}
+
+/* Track */
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+/* Thumb */
+.scroll-bar .thumb {
+    -fx-background-color: #C9A24A;
+    -fx-background-radius: 10px;
+}
+
+/* Hover */
+.scroll-bar .thumb:hover {
+    -fx-background-color: #B78D2C;
+}
+
+/* Remove arrows */
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+.scroll-pane {
+    -fx-background-color: #F5F3EE;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #F5F3EE;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(201,162,74,0.65);
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #C9A24A;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 10px;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 10px;
+}
+
+/* Surah selector in Quran page */
+.surah-selector {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #C9A24A;
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+    -fx-font-size: 16px;
+    -fx-text-fill: #123B3A;
+    -fx-padding: 4 10 4 10;
+}
+
+.surah-selector:hover {
+    -fx-border-color: #B78D2C;
+    -fx-cursor: hand;
+}
+
+.surah-selector:focused {
+    -fx-border-color: #123B3A;
+    -fx-background-insets: 0;
+}
+
+.surah-selector .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.surah-selector .arrow {
+    -fx-background-color: #123B3A;
+}
+
+.surah-selector .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #123B3A;
+    -fx-padding: 8 12;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #C9A24A;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #123B3A;
+    -fx-font-size: 15px;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #F7E8B5;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #C9A24A;
+    -fx-text-fill: black;
+}
+
+/* ComboBox dropdown scrollbar */
+.combo-box-popup .scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8px;
+}
+
+/* Scrollbar track */
+.combo-box-popup .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+/* Scrollbar thumb */
+.combo-box-popup .scroll-bar .thumb {
+    -fx-background-color: #C9A24A;
+    -fx-background-radius: 10;
+}
+
+/* Hover effect */
+.combo-box-popup .scroll-bar .thumb:hover {
+    -fx-background-color: #B78D2C;
+}
+
+/* Remove scrollbar arrows */
+.combo-box-popup .scroll-bar .increment-button,
+.combo-box-popup .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.combo-box-popup .scroll-bar .increment-arrow,
+.combo-box-popup .scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
