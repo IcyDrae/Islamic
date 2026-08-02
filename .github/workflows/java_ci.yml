@@ -21,12 +21,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
+      - name: Build project
         run: mvn clean package
-      - name: Run tests
-        run: mvn test
-      - name: Build JAR
-        run: mvn clean package
+      # Later when there will be tests
+      #- name: Run tests
+      #  run: mvn test
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
